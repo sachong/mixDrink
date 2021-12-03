@@ -1,3 +1,4 @@
+/// List View of cocktails
 class DrinkOption {
 
   String strDrink;
@@ -19,6 +20,7 @@ class DrinkOption {
       strDrink: json['strDrink'],
       strDrinkThumb: json['strDrinkThumb'],
       idDrink: json['idDrink'],
+      // ingredientLis
     );
   }
 

@@ -1,3 +1,4 @@
+/// A drink
 class Drink {
 
   String strDrink;
@@ -16,15 +17,26 @@ class Drink {
     this.amountList
   });
 
+  Future<List<String>> getIngredient()async{
+    List<String> temp = [];
+    temp.add("ingredient1");
+    temp.add("ingredient2");
+    return temp;
+  }
+
   factory Drink.fromJson(Map<String, dynamic> json) {
+    // List<String> l = getIngredient();
     return Drink(
       strDrink: json['drinks'][0]['strDrink'],
       strDrinkThumb: json['drinks'][0]['strDrinkThumb'],
       idDrink: json['drinks'][0]['idDrink'],
       strInstructions: json['drinks'][0]['strInstructions'],
-        // ingredientList: getIngredients(json['drinks'][0]['strIngredients'])
+      ingredientList: [json['drinks'][0]['strIngredient1'], json['drinks'][0]['strIngredient2'], json['drinks'][0]['strIngredient3']],
+      // ingredientList: getIngredients(json['drinks'][0]['strIngredients'])
     );
   }
+
+
 
   // Future<List<String>> getIngredients(var ingredients)async{
   //   for (var j = 1; j <= 15; j++) {

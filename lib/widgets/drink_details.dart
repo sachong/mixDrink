@@ -27,6 +27,7 @@ class _DrinkDetailsState extends State<DrinkDetails> {
       body: FutureBuilder<Drink>(
         future: _getDrinkDetails(),
         builder: (context, snapshot) {
+          //var ingredients = [[snapshot.data.ingredientList[0]], [snapshot.data.ingredientList[1]], [snapshot.data.ingredientList[2]]];
           print(snapshot.data);
           if (!snapshot.hasData) return Center(child: CircularProgressIndicator());
           return Column(
@@ -59,7 +60,66 @@ class _DrinkDetailsState extends State<DrinkDetails> {
                     ),
                   ),
                 ),
-                flex: 4,
+                //flex: 3,
+              ),
+              Expanded(
+                child: new SingleChildScrollView(
+                  child: new Column(
+                    children: [
+                      new Container(
+                        child: new Text(
+                          snapshot.data.ingredientList[0],
+                          textAlign: TextAlign.justify,
+                          style: new TextStyle(
+                            fontSize: 16.0,
+                            color: Colors.black,
+                          ),
+                        ),
+
+                      ),
+                      new Container(
+
+                        child: snapshot.data.ingredientList[1] != null ?
+                        new Text(
+                          snapshot.data.ingredientList[1],
+                          textAlign: TextAlign.justify,
+                          style: new TextStyle(
+                            fontSize: 16.0,
+                            color: Colors.black,
+                          ),
+                        ) : new Text(
+                          "",
+                          textAlign: TextAlign.justify,
+                          style: new TextStyle(
+                            fontSize: 16.0,
+                            color: Colors.black,
+                          ),
+                        ),
+
+                      ),
+                      new Container(
+                        child: snapshot.data.ingredientList[2] != null ?
+                        new Text(
+                          snapshot.data.ingredientList[2],
+                          textAlign: TextAlign.justify,
+                          style: new TextStyle(
+                            fontSize: 16.0,
+                            color: Colors.black,
+                          ),
+                        ) : new Text(
+                          "",
+                          textAlign: TextAlign.justify,
+                          style: new TextStyle(
+                            fontSize: 16.0,
+                            color: Colors.black,
+                          ),
+                        ),
+
+                      ),
+                    ],
+                  )
+                ),
+                flex: 3,
               ),
             ],
           );
