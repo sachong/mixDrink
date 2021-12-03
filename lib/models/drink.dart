@@ -1,0 +1,43 @@
+class Drink {
+
+  String strDrink;
+  String strDrinkThumb;
+  String idDrink;
+  String strInstructions;
+  List<String> ingredientList = [];
+  List<String> amountList = [];
+
+  Drink({
+    this.strDrink,
+    this.strDrinkThumb,
+    this.idDrink,
+    this.strInstructions,
+    this.ingredientList,
+    this.amountList
+  });
+
+  factory Drink.fromJson(Map<String, dynamic> json) {
+    return Drink(
+      strDrink: json['drinks'][0]['strDrink'],
+      strDrinkThumb: json['drinks'][0]['strDrinkThumb'],
+      idDrink: json['drinks'][0]['idDrink'],
+      strInstructions: json['drinks'][0]['strInstructions'],
+        // ingredientList: getIngredients(json['drinks'][0]['strIngredients'])
+    );
+  }
+
+  // Future<List<String>> getIngredients(var ingredients)async{
+  //   for (var j = 1; j <= 15; j++) {
+  //     if (cocktailList[0]['strIngredient$j'] != null) {
+  //       ingredientList.add(cocktailList[0]['strIngredient$j']);
+  //     }
+  //     if (cocktailList[0]['strMeasure$j'] != null) {
+  //       measureList.add(cocktailList[0]['strMeasure$j']);
+  //     }
+  //   }
+  // }
+
+
+
+
+}
