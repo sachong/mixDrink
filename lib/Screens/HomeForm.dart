@@ -51,7 +51,7 @@ class _HomeFormState extends State<HomeForm> {
     if (_formKey.currentState.validate()) {
       _formKey.currentState.save();
 
-      UserModel user = UserModel(uid, uname, email, passwd);
+      UserModel user = UserModel(uid, uname, email, passwd, "");
       await dbHelper.updateUser(user).then((value) {
         if (value == 1) {
           alertDialog(context, "Successfully Updated");

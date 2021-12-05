@@ -13,6 +13,8 @@ class DrinkApiProvider {
 
     String url = '${baseUrl}filter.php?${search}';
 
+    String urlName = '${baseUrl}search.php?${search}';
+
     Response response = await get(url);
 
     if (response.statusCode == 200) {

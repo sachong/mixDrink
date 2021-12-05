@@ -40,7 +40,7 @@ class _SignupFormState extends State<SignupForm> {
       } else {
         _formKey.currentState.save();
 
-        UserModel uModel = UserModel(uid, uname, email, passwd);
+        UserModel uModel = UserModel(uid, uname, email, passwd, "");
         await dbHelper.saveData(uModel).then((userData) {
           alertDialog(context, "Successfully Saved");
 

@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:login_with_signup/models/drink.dart';
 import 'package:login_with_signup/resources/repository.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:login_with_signup/DatabaseHandler/DbHelper.dart';
+import 'package:login_with_signup/Model/UserModel.dart';
 
 ///Detailed view of cocktail with instructions and picture
 ///TO DO ADD INGREDIENTS AND AMOUNT
@@ -14,11 +17,43 @@ class DrinkDetails extends StatefulWidget {
 
 class _DrinkDetailsState extends State<DrinkDetails> {
 
+
   Future<Drink> _getDrinkDetails() async {
     return Repository().getDrinkDetails(widget.id);
   }
 
+  Future<SharedPreferences> _pref = SharedPreferences.getInstance();
+  DbHelper dbHelper;
+  String userId = '';
+  String userName = '';
+  String email = '';
+  String password = '';
+
+  bool toggle = false;
+
   @override
+
+  void initState() {
+    super.initState();
+    getUserData();
+
+    dbHelper = DbHelper();
+  }
+
+  Future<void> getUserData() async {
+    final SharedPreferences sp = await _pref;
+    userId = sp.getString("user_id");
+    userName = sp.getString("user_name");
+    email = sp.getString("email");
+    password = sp.getString("password");
+  }
+
+  addToFav(){
+    UserModel user = UserModel(userId, userName, email, password, widget.drinkName);
+    print(widget.drinkName);
+    dbHelper.saveData(user);
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -89,6 +124,19 @@ class _DrinkDetailsState extends State<DrinkDetails> {
                 ),
                 flex: 3,
               ),
+              IconButton(
+                  icon: toggle
+                      ? Icon(Icons.favorite)
+                      : Icon(
+                    Icons.favorite_border,
+                  ),
+                  onPressed:()  {
+                    addToFav();
+                    setState(() {
+                      // Here we changing the icon.
+                      toggle = !toggle;
+                    });
+                  }),
             ],
           );
         },

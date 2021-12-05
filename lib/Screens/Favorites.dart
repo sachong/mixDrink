@@ -1,3 +1,5 @@
+import 'package:login_with_signup/DatabaseHandler/DbHelper.dart';
+import 'package:login_with_signup/Model/UserModel.dart';
 import 'package:login_with_signup/resources/repository.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -5,22 +7,25 @@ import 'package:page_transition/page_transition.dart';
 import 'package:login_with_signup/models/drink_option.dart';
 import 'package:login_with_signup/widgets/drink_details.dart';
 import 'package:login_with_signup/widgets/list_drinks.dart';
-import 'Favorites.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'Cocktails.dart';
 import 'HomeForm.dart';
 import 'HomeDrink.dart';
 import 'package:login_with_signup/widgets/random_drink.dart' as Random;
 
 ///cocktail list screen
-class CocktailDrinks extends StatefulWidget {
+class Favorites extends StatefulWidget {
   final String search;
   final String title;
-  CocktailDrinks({Key key, @required this.search, this.title}): super(key: key);
-  _CocktailDrinksState createState() => _CocktailDrinksState();
+  final String id;
+  final String drinkName;
+  Favorites({Key key, @required this.search, this.title, this.id, this.drinkName}): super(key: key);
+  _FavoritesState createState() => _FavoritesState();
 }
 
-class _CocktailDrinksState extends State<CocktailDrinks> {
+class _FavoritesState extends State<Favorites> {
 
-  int _selectedIndex = 1; ///starts on cocktail icon
+  int _selectedIndex = 2; ///starts on cocktail icon
   var input = "";
 
   TextEditingController fieldText = new TextEditingController();
@@ -44,60 +49,58 @@ class _CocktailDrinksState extends State<CocktailDrinks> {
       Navigator.push(context,
           MaterialPageRoute(builder: (_) => HomeDrink()));
     }
-    else if(index == 2){ ///goes to Favorites
-      Navigator.push(context,
-          MaterialPageRoute(builder: (_) => Favorites()));
+    else if(index == 1){ ///change screen depending on index
+      Navigator.push(
+        context,
+        PageTransition(type: PageTransitionType.rightToLeft, child: CocktailDrinks(search: 'c=Cocktail', title: 'Cocktail')),
+      );
     }
     else if(index == 3){ ///goes to settings
       Navigator.push(context,
-        MaterialPageRoute(builder: (_) => HomeForm()));
+          MaterialPageRoute(builder: (_) => HomeForm()));
     }
   }
+
+  Future<SharedPreferences> _pref = SharedPreferences.getInstance();
+  DbHelper dbHelper;
+  String userId = '';
+  String userName = '';
+  String email = '';
+  String password = '';
+  UserModel userModel;
+
+
+  bool toggle = false;
 
   @override
 
   void initState() {
     super.initState();
+    getUserData();
 
-    // Start listening to changes.
-    fieldText.addListener;
+    dbHelper = DbHelper();
   }
+
+  Future<void> getUserData() async {
+    final SharedPreferences sp = await _pref;
+    userId = sp.getString("user_id");
+    userName = sp.getString("user_name");
+    email = sp.getString("email");
+    password = sp.getString("password");
+  }
+
+  Future<void> getFavDrinks() async{
+    await dbHelper.getLoginUser(userId, password).then((userData) {
+      if (userData != null) {
+        userModel = userData;
+      }
+    });
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Container( ///search box
-          width: double.infinity,
-          height: 40,
-          decoration: BoxDecoration(
-              color: Colors.white, borderRadius: BorderRadius.circular(5)),
-          child: Center(
-            child: TextField(
-              controller: fieldText,
-              onChanged: (text){
-                fieldText.value = text as TextEditingValue;
-              },
-              textInputAction: TextInputAction.go,
-              //content: Text(fieldText.text),
-              decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.search),
-                  suffixIcon: IconButton(
-                    icon: Icon(Icons.search),
-                    onPressed: (){
-                      setState(() {
-                        getVal = fieldText.text;
-                      });
-                      Navigator.push(
-                        context,
-                        PageTransition(type: PageTransitionType.rightToLeft, child: ListDrinks(search: "i=$getVal", title: "")),
-                      );
-                    }
-                    //clearText,
-                  ),
-                  hintText: 'Search...',
-                  border: InputBorder.none),
-            ),
-          ),
-        ),
+        title: Text("Favorites"),
       ),
       body: FutureBuilder<List<DrinkOption>>(
         future: _getDrinkOptions(),

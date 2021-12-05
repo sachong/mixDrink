@@ -5,11 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8192b90-9cc2-4501-a14a-fa79cf0e3f35" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/5.6.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/5.6.2/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/5.6.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/5.6.2/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/5.6.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/5.6.2/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/5.6.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/5.6.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/96bbd943d26f1ae2e00dac18ba4dd43c.cache.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/96bbd943d26f1ae2e00dac18ba4dd43c.cache.dill.track.dill" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/DatabaseHandler/DbHelper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/DatabaseHandler/DbHelper.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/drink_option.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/drink_option.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/UserModel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/UserModel.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Screens/Cocktails.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Screens/Cocktails.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Screens/HomeForm.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Screens/HomeForm.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Screens/SignupForm.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Screens/SignupForm.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/drink.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/drink.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/resources/drink_api_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/resources/drink_api_provider.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/widgets/drink_details.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/drink_details.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/random_drink.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/random_drink.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,18 +148,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/widgets/drink_details.dart</url>
-          <line>10</line>
+          <line>13</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/Screens/Cocktails.dart</url>
-          <line>11</line>
+          <line>12</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/models/drink.dart</url>
           <line>18</line>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/Screens/LoginForm.dart</url>
+          <line>108</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

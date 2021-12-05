@@ -15,6 +15,7 @@ class DbHelper {
   static const String C_UserName = 'user_name';
   static const String C_Email = 'email';
   static const String C_Password = 'password';
+  static const String C_favDrink = 'drink_name';
 
   Future<Database> get db async {
     if (_db != null) {
@@ -37,7 +38,8 @@ class DbHelper {
         " $C_UserName TEXT, "
         " $C_Email TEXT,"
         " $C_Password TEXT, "
-        " PRIMARY KEY ($C_UserID)"
+        " $C_favDrink TEXT "
+        // " PRIMARY KEY ($C_UserID)"
         ")");
   }
 
