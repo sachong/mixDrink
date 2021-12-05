@@ -27,7 +27,6 @@ class _DrinkDetailsState extends State<DrinkDetails> {
       body: FutureBuilder<Drink>(
         future: _getDrinkDetails(),
         builder: (context, snapshot) {
-          //var ingredients = [[snapshot.data.ingredientList[0]], [snapshot.data.ingredientList[1]], [snapshot.data.ingredientList[2]]];
           print(snapshot.data);
           if (!snapshot.hasData) return Center(child: CircularProgressIndicator());
           return Column(
@@ -77,7 +76,7 @@ class _DrinkDetailsState extends State<DrinkDetails> {
                                 color: Colors.black,
                               ),
                             ) : new Text(
-                              "test",
+                              "",
                               textAlign: TextAlign.justify,
                               style: new TextStyle(
                                 fontSize: 16.0,
@@ -90,34 +89,6 @@ class _DrinkDetailsState extends State<DrinkDetails> {
                 ),
                 flex: 3,
               ),
-              // Expanded(
-              //   child: new SingleChildScrollView(
-              //       child: new Column(
-              //         children: [
-              //           for (var i in snapshot.data.amountList)
-              //             new Container(
-              //               child: i != null ?
-              //               new Text(
-              //                 i,
-              //                 textAlign: TextAlign.justify,
-              //                 style: new TextStyle(
-              //                   fontSize: 16.0,
-              //                   color: Colors.black,
-              //                 ),
-              //               ) : new Text(
-              //                 "pene",
-              //                 textAlign: TextAlign.justify,
-              //                 style: new TextStyle(
-              //                   fontSize: 16.0,
-              //                   color: Colors.black,
-              //                 ),
-              //               ),
-              //             ),
-              //         ],
-              //       )
-              //   ),
-              //   flex: 3,
-              // ),
             ],
           );
         },

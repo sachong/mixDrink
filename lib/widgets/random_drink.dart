@@ -13,6 +13,8 @@ class _DrinkRandomState extends State<DrinkRandom> {
   String title = '';
   String imgUrl = '';
   String instructions = '';
+  List<String> ingredientList = [];
+  List<String> amountList = [];
 
   RefreshController _refreshController = RefreshController(initialRefresh: false);
 
@@ -22,6 +24,8 @@ class _DrinkRandomState extends State<DrinkRandom> {
         this.title = drink.strDrink,
         this.imgUrl = drink.strDrinkThumb,
         this.instructions = drink.strInstructions,
+        this.ingredientList = drink.ingredientList,
+        this.amountList = drink.amountList,
       });
     });
     return;
@@ -63,7 +67,7 @@ class _DrinkRandomState extends State<DrinkRandom> {
                 ),
               ),
             ),
-            flex: 3,
+            flex: 4,
           ),
           Expanded(
             child: new SingleChildScrollView(
@@ -79,7 +83,35 @@ class _DrinkRandomState extends State<DrinkRandom> {
                 ),
               ),
             ),
-            flex: 4,
+            flex: 2,
+          ),
+          Expanded(
+            child: new SingleChildScrollView(
+                child: new Column(
+                  children: [
+                    for (var i in ingredientList)
+                      new Container(
+                        child: i != null ?
+                        new Text(
+                          i,
+                          textAlign: TextAlign.justify,
+                          style: new TextStyle(
+                            fontSize: 16.0,
+                            color: Colors.black,
+                          ),
+                        ) : new Text(
+                          "",
+                          textAlign: TextAlign.justify,
+                          style: new TextStyle(
+                            fontSize: 16.0,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                  ],
+                )
+            ),
+            flex: 3,
           ),
         ],
       ),

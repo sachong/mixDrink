@@ -4,15 +4,15 @@ class DrinkOption {
   String strDrink;
   String strDrinkThumb;
   String idDrink;
-  List<String> ingredientList = [];
-  List<String> amountList = [];
+  // List<String> ingredientList = [];
+  // List<String> amountList = [];
 
   DrinkOption({
     this.strDrink,
     this.strDrinkThumb,
     this.idDrink,
-    this.ingredientList,
-    this.amountList
+    // this.ingredientList,
+    // this.amountList
   });
 
   factory DrinkOption.fromJson(Map<String, dynamic> json) {
