@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:login_with_signup/models/drink_option.dart';
-import 'package:login_with_signup/widgets/drink_details.dart';
+import 'package:login_with_signup/Screens/drink_details.dart';
 import 'package:login_with_signup/widgets/list_drinks.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'Cocktails.dart';

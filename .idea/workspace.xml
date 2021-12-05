@@ -5,33 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8192b90-9cc2-4501-a14a-fa79cf0e3f35" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/6d80607e079525d74c085f344dbc9353/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/6d80607e079525d74c085f344dbc9353/.filecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/6d80607e079525d74c085f344dbc9353/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/6d80607e079525d74c085f344dbc9353/app.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/6d80607e079525d74c085f344dbc9353/debug_android_application.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/6d80607e079525d74c085f344dbc9353/debug_android_application.stamp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/6d80607e079525d74c085f344dbc9353/flutter_assets.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/6d80607e079525d74c085f344dbc9353/flutter_assets.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/6d80607e079525d74c085f344dbc9353/kernel_snapshot.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/6d80607e079525d74c085f344dbc9353/kernel_snapshot.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/6d80607e079525d74c085f344dbc9353/kernel_snapshot.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/6d80607e079525d74c085f344dbc9353/kernel_snapshot.stamp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/5.6.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/5.6.2/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/5.6.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/5.6.2/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/5.6.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/5.6.2/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/5.6.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/5.6.2/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/96bbd943d26f1ae2e00dac18ba4dd43c.cache.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/96bbd943d26f1ae2e00dac18ba4dd43c.cache.dill.track.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/kernel_blob.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_build.d" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_build.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/intermediates/merged_assets/debug/out/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/merged_assets/debug/out/flutter_assets/kernel_blob.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/apk/debug/app-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app.apk.sha1" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app.apk.sha1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Comm/genLoginSignupHeader.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Comm/genLoginSignupHeader.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/DatabaseHandler/DbHelper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/DatabaseHandler/DbHelper.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Screens/Cocktails.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Screens/Cocktails.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Screens/HomeDrink.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Screens/HomeDrink.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Screens/HomeForm.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Screens/HomeForm.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/drink.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/drink.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/drink_details.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/drink_details.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Screens/Favorites.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Screens/Favorites.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/drink_details.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Screens/drink_details.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/list_drinks.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/list_drinks.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +54,11 @@
     <property name="last_opened_file_path" value="$USER_HOME$/Computer Science/Android Studio/mixDrink" />
     <property name="settings.editor.selected.configurable" value="flutter.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sachong\Downloads\Flutter-main\Flutter-main\login_with_signup\lib\Screens" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
@@ -159,13 +145,13 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/widgets/drink_details.dart</url>
+          <url>file://$PROJECT_DIR$/lib/Screens/drink_details.dart</url>
           <line>13</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/Screens/Cocktails.dart</url>
-          <line>12</line>
+          <line>11</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
