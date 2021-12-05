@@ -4,7 +4,12 @@ import 'package:login_with_signup/Comm/genTextFormField.dart';
 import 'package:login_with_signup/DatabaseHandler/DbHelper.dart';
 import 'package:login_with_signup/Model/UserModel.dart';
 import 'package:login_with_signup/Screens/LoginForm.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import 'Cocktails.dart';
+import 'Favorites.dart';
+import 'HomeDrink.dart';
 
 class HomeForm extends StatefulWidget {
   @override
@@ -104,11 +109,35 @@ class _HomeFormState extends State<HomeForm> {
     }
   }
 
+  int _selectedIndex = 3; ///starts on cocktail icon
+  ///change icon in bottom tool bar
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+    if(index == 0){ ///goes to Home
+      Navigator.push(context,
+          MaterialPageRoute(builder: (_) => HomeDrink()));
+    }
+    if(index == 1){ ///change screen depending on index
+      Navigator.push(
+        context,
+        PageTransition(type: PageTransitionType.rightToLeft, child: CocktailDrinks(search: 'c=Cocktail', title: 'Cocktail')),
+      );
+    }
+    else if(index == 2){ ///goes to Favorites
+      Navigator.push(context,
+          MaterialPageRoute(builder: (_) => Favorites()));
+    }
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Home'),
+
       ),
       body: Form(
         key: _formKey,
@@ -125,13 +154,13 @@ class _HomeFormState extends State<HomeForm> {
                       controller: _conUserId,
                       isEnable: false,
                       icon: Icons.person,
-                      hintName: 'User ID'),
+                      hintName: 'Username'),
                   SizedBox(height: 10.0),
                   getTextFormField(
                       controller: _conUserName,
                       icon: Icons.person_outline,
                       inputType: TextInputType.name,
-                      hintName: 'User Name'),
+                      hintName: 'Name'),
                   SizedBox(height: 10.0),
                   getTextFormField(
                       controller: _conEmail,
@@ -168,7 +197,7 @@ class _HomeFormState extends State<HomeForm> {
                       controller: _conDelUserId,
                       isEnable: false,
                       icon: Icons.person,
-                      hintName: 'User ID'),
+                      hintName: 'Username'),
                   SizedBox(height: 10.0),
                   SizedBox(height: 10.0),
                   Container(
@@ -191,6 +220,22 @@ class _HomeFormState extends State<HomeForm> {
             ),
           ),
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        selectedFontSize: 20,
+        iconSize: 30,
+        backgroundColor: Colors.blueAccent,
+        selectedIconTheme: IconThemeData(color: Colors.amberAccent, size: 30),
+        selectedItemColor: Colors.amberAccent,
+        type: BottomNavigationBarType.fixed,
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.home_filled), title: Text('Home')),
+          BottomNavigationBarItem(icon: Icon(Icons.local_drink), title: Text('Cocktails')),
+          BottomNavigationBarItem(icon: Icon(Icons.favorite), title: Text('Favorites')),
+          BottomNavigationBarItem(icon: Icon(Icons.person), title: Text('Account')),
+        ],
+        currentIndex: _selectedIndex, //New
+        onTap: _onItemTapped,
       ),
     );
   }

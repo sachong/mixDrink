@@ -20,7 +20,7 @@ class CocktailDrinks extends StatefulWidget {
 
 class _CocktailDrinksState extends State<CocktailDrinks> {
 
-  int _selectedIndex = 1; ///starts on cocktail icon
+
   var input = "";
 
   TextEditingController fieldText = new TextEditingController();
@@ -35,6 +35,7 @@ class _CocktailDrinksState extends State<CocktailDrinks> {
     return Repository().getDrinkOptions(widget.search);
   }
 
+  int _selectedIndex = 1; ///starts on cocktail icon
   ///change icon in bottom tool bar
   void _onItemTapped(int index) {
     setState(() {
