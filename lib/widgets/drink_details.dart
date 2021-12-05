@@ -66,56 +66,27 @@ class _DrinkDetailsState extends State<DrinkDetails> {
                 child: new SingleChildScrollView(
                   child: new Column(
                     children: [
+                      for (var i in snapshot.data.ingredientList)
                       new Container(
-                        child: new Text(
-                          snapshot.data.ingredientList[0],
-                          textAlign: TextAlign.justify,
-                          style: new TextStyle(
-                            fontSize: 16.0,
-                            color: Colors.black,
-                          ),
-                        ),
-
-                      ),
-                      new Container(
-
-                        child: snapshot.data.ingredientList[1] != null ?
+                        child: i != null ?
                         new Text(
-                          snapshot.data.ingredientList[1],
+                          i,
                           textAlign: TextAlign.justify,
                           style: new TextStyle(
                             fontSize: 16.0,
                             color: Colors.black,
                           ),
                         ) : new Text(
-                          "",
+                          "pene",
                           textAlign: TextAlign.justify,
                           style: new TextStyle(
                             fontSize: 16.0,
                             color: Colors.black,
                           ),
                         ),
-
                       ),
-                      new Container(
-                        child: snapshot.data.ingredientList[2] != null ?
-                        new Text(
-                          snapshot.data.ingredientList[2],
-                          textAlign: TextAlign.justify,
-                          style: new TextStyle(
-                            fontSize: 16.0,
-                            color: Colors.black,
-                          ),
-                        ) : new Text(
-                          "",
-                          textAlign: TextAlign.justify,
-                          style: new TextStyle(
-                            fontSize: 16.0,
-                            color: Colors.black,
-                          ),
-                        ),
 
-                      ),
+
                     ],
                   )
                 ),
