@@ -35,7 +35,6 @@ class Drink {
         json['drinks'][0]['strIngredient3'], json['drinks'][0]['strIngredient4'], json['drinks'][0]['strIngredient5']],
       amountList: [json['drinks'][0]['strMeasure1'],json['drinks'][0]['strMeasure2'],json['drinks'][0]['strMeasure3'],
         json['drinks'][0]['strMeasure4'],json['drinks'][0]['strMeasure5']],
-      // ingredientList: getIngredients(json['drinks'][0]['strIngredients'])
     );
   }
 
