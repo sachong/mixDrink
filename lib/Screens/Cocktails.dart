@@ -1,9 +1,9 @@
-import 'package:login_with_signup/resources/repository.dart';
+import 'package:mixDrink/resources/repository.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:login_with_signup/models/drink_option.dart';
-import 'package:login_with_signup/Screens/drink_details.dart';
+import 'package:mixDrink/models/drink_option.dart';
+import 'package:mixDrink/Screens/DrinkDetails.dart';
 //import 'package:login_with_signup/widgets/list_drinks.dart';
 import 'Favorites.dart';
 import 'HomeForm.dart';

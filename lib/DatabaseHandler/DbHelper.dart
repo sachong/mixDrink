@@ -1,4 +1,4 @@
-import 'package:login_with_signup/Model/UserModel.dart';
+import 'package:mixDrink/Model/UserModel.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';

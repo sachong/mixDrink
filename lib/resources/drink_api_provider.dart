@@ -2,8 +2,8 @@ import 'dart:convert';
 import 'dart:async';
 
 import 'package:http/http.dart';
-import 'package:login_with_signup/models/drink.dart';
-import 'package:login_with_signup/models/drink_option.dart';
+import 'package:mixDrink/models/drink.dart';
+import 'package:mixDrink/models/drink_option.dart';
 
 class DrinkApiProvider {
 

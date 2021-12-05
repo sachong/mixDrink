@@ -1,11 +1,11 @@
-import 'package:login_with_signup/resources/repository.dart';
+import 'package:mixDrink/resources/repository.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:login_with_signup/models/drink_option.dart';
-import 'package:login_with_signup/widgets/random_drink.dart';
-import 'package:login_with_signup/widgets/list_drinks.dart';
+import 'package:mixDrink/models/drink_option.dart';
+import 'package:mixDrink/Screens/RandomDrink.dart';
+import 'package:mixDrink/widgets/list_drinks.dart';
 
-import 'package:login_with_signup/widgets/random_drink.dart' as Random;
+import 'package:mixDrink/Screens/RandomDrink.dart' as Random;
 import 'Favorites.dart';
 import 'HomeForm.dart';
 import 'Cocktails.dart';
@@ -23,21 +23,6 @@ class _HomeDrinkState extends State<HomeDrink> {
   int _selectedIndex = 0;
 
   ///starts in home
-  // static const List<Widget> _pages = <Widget>[
-  //   Icon(
-  //     Icons.home_filled,
-  //   ),
-  //   Icon(
-  //     Icons.local_drink,
-  //   ),
-  //   Icon(
-  //     Icons.favorite,
-  //   ),
-  //   Icon(
-  //     Icons.person,
-  //   ),
-  // ];
-
   Future<List<DrinkOption>> _getDrinkOptions() async {
     return Repository().getDrinkOptions(widget.search);
   }

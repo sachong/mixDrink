@@ -3,9 +3,9 @@
 // import 'package:cached_network_image/cached_network_image.dart';
 // import 'package:page_transition/page_transition.dart';
 // import 'package:login_with_signup/models/drink_option.dart';
-// import 'package:login_with_signup/Screens/drink_details.dart';
+// import 'package:login_with_signup/Screens/DrinkDetails.dart';
 //
-// import 'package:login_with_signup/widgets/random_drink.dart' as Random;
+// import 'package:login_with_signup/widgets/RandomDrink.dart' as Random;
 ///NOT NECESSARY
 // ///cocktail list screen
 // class ListDrinks extends StatefulWidget {

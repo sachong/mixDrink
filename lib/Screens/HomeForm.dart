@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:login_with_signup/Comm/comHelper.dart';
-import 'package:login_with_signup/Comm/genTextFormField.dart';
-import 'package:login_with_signup/DatabaseHandler/DbHelper.dart';
-import 'package:login_with_signup/Model/UserModel.dart';
-import 'package:login_with_signup/Screens/LoginForm.dart';
+import 'package:mixDrink/Comm/comHelper.dart';
+import 'package:mixDrink/Comm/genTextFormField.dart';
+import 'package:mixDrink/DatabaseHandler/DbHelper.dart';
+import 'package:mixDrink/Model/UserModel.dart';
+import 'package:mixDrink/Screens/LoginForm.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

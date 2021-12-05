@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:login_with_signup/Comm/comHelper.dart';
-import 'package:login_with_signup/Comm/genLoginSignupHeader.dart';
-import 'package:login_with_signup/Comm/genTextFormField.dart';
-import 'package:login_with_signup/DatabaseHandler/DbHelper.dart';
-import 'package:login_with_signup/Model/UserModel.dart';
-import 'package:login_with_signup/Screens/SignupForm.dart';
+import 'package:mixDrink/Comm/comHelper.dart';
+import 'package:mixDrink/Comm/genLoginSignupHeader.dart';
+import 'package:mixDrink/Comm/genTextFormField.dart';
+import 'package:mixDrink/DatabaseHandler/DbHelper.dart';
+import 'package:mixDrink/Model/UserModel.dart';
+import 'package:mixDrink/Screens/SignupForm.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'HomeDrink.dart';
 import 'HomeForm.dart';
 
-//import 'package:login_with_signup/widgets/home.dart' as Home;
+//import 'package:mixDrink/widgets/home.dart' as Home;
 
 class LoginForm extends StatefulWidget {
   @override

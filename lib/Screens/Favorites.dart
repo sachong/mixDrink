@@ -1,17 +1,17 @@
-import 'package:login_with_signup/DatabaseHandler/DbHelper.dart';
-import 'package:login_with_signup/Model/UserModel.dart';
-import 'package:login_with_signup/resources/repository.dart';
+import 'package:mixDrink/DatabaseHandler/DbHelper.dart';
+import 'package:mixDrink/Model/UserModel.dart';
+import 'package:mixDrink/resources/repository.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:login_with_signup/models/drink_option.dart';
-import 'package:login_with_signup/Screens/drink_details.dart';
-import 'package:login_with_signup/widgets/list_drinks.dart';
+import 'package:mixDrink/models/drink_option.dart';
+import 'package:mixDrink/Screens/DrinkDetails.dart';
+import 'package:mixDrink/widgets/list_drinks.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'Cocktails.dart';
 import 'HomeForm.dart';
 import 'HomeDrink.dart';
-import 'package:login_with_signup/widgets/random_drink.dart' as Random;
+import 'package:mixDrink/Screens/RandomDrink.dart' as Random;
 
 ///cocktail list screen
 class Favorites extends StatefulWidget {

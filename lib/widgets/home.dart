@@ -1,6 +1,6 @@
 // import 'package:flutter/material.dart';
 // import 'package:page_transition/page_transition.dart';
-// import 'package:login_with_signup/widgets/random_drink.dart';
+// import 'package:login_with_signup/widgets/RandomDrink.dart';
 // import 'package:login_with_signup/widgets/list_drinks.dart';
 /// NOT NECESSARY
 // class DrinkApp extends StatelessWidget {
