@@ -4,6 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:login_with_signup/models/drink_option.dart';
 import 'package:login_with_signup/widgets/drink_details.dart';
+import 'package:login_with_signup/widgets/list_drinks.dart';
 import 'HomeForm.dart';
 import 'HomeDrink.dart';
 import 'package:login_with_signup/widgets/random_drink.dart' as Random;
@@ -19,8 +20,11 @@ class CocktailDrinks extends StatefulWidget {
 class _CocktailDrinksState extends State<CocktailDrinks> {
 
   int _selectedIndex = 1; ///starts on cocktail icon
+  var input = "";
 
-  final fieldText = TextEditingController();
+  TextEditingController fieldText = new TextEditingController();
+  String getVal;
+
   /// deletes what is written in search box
   void clearText() {
     fieldText.clear();
@@ -47,6 +51,12 @@ class _CocktailDrinksState extends State<CocktailDrinks> {
 
   @override
 
+  void initState() {
+    super.initState();
+
+    // Start listening to changes.
+    fieldText.addListener;
+  }
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -57,15 +67,29 @@ class _CocktailDrinksState extends State<CocktailDrinks> {
               color: Colors.white, borderRadius: BorderRadius.circular(5)),
           child: Center(
             child: TextField(
+              controller: fieldText,
+              onChanged: (text){
+                fieldText.value = text as TextEditingValue;
+              },
+              textInputAction: TextInputAction.go,
+              //content: Text(fieldText.text),
               decoration: InputDecoration(
                   prefixIcon: Icon(Icons.search),
                   suffixIcon: IconButton(
-                    icon: Icon(Icons.clear),
-                    onPressed: clearText,
+                    icon: Icon(Icons.search),
+                    onPressed: (){
+                      setState(() {
+                        getVal = fieldText.text;
+                      });
+                      Navigator.push(
+                        context,
+                        PageTransition(type: PageTransitionType.rightToLeft, child: ListDrinks(search: "i=$getVal", title: "")),
+                      );
+                    }
+                    //clearText,
                   ),
                   hintText: 'Search...',
                   border: InputBorder.none),
-              controller: fieldText,
             ),
           ),
         ),

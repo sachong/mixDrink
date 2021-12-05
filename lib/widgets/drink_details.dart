@@ -44,7 +44,7 @@ class _DrinkDetailsState extends State<DrinkDetails> {
                     ),
                   ),
                 ),
-                flex: 6,
+                flex: 4,
               ),
               Expanded(
                 child: new SingleChildScrollView(
@@ -60,7 +60,7 @@ class _DrinkDetailsState extends State<DrinkDetails> {
                     ),
                   ),
                 ),
-                //flex: 3,
+                flex: 2,
               ),
               Expanded(
                 child: new SingleChildScrollView(
@@ -77,7 +77,7 @@ class _DrinkDetailsState extends State<DrinkDetails> {
                                 color: Colors.black,
                               ),
                             ) : new Text(
-                              "pene",
+                              "test",
                               textAlign: TextAlign.justify,
                               style: new TextStyle(
                                 fontSize: 16.0,
@@ -90,34 +90,34 @@ class _DrinkDetailsState extends State<DrinkDetails> {
                 ),
                 flex: 3,
               ),
-              Expanded(
-                child: new SingleChildScrollView(
-                    child: new Column(
-                      children: [
-                        for (var i in snapshot.data.amountList)
-                          new Container(
-                            child: i != null ?
-                            new Text(
-                              i,
-                              textAlign: TextAlign.justify,
-                              style: new TextStyle(
-                                fontSize: 16.0,
-                                color: Colors.black,
-                              ),
-                            ) : new Text(
-                              "pene",
-                              textAlign: TextAlign.justify,
-                              style: new TextStyle(
-                                fontSize: 16.0,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                      ],
-                    )
-                ),
-                flex: 3,
-              ),
+              // Expanded(
+              //   child: new SingleChildScrollView(
+              //       child: new Column(
+              //         children: [
+              //           for (var i in snapshot.data.amountList)
+              //             new Container(
+              //               child: i != null ?
+              //               new Text(
+              //                 i,
+              //                 textAlign: TextAlign.justify,
+              //                 style: new TextStyle(
+              //                   fontSize: 16.0,
+              //                   color: Colors.black,
+              //                 ),
+              //               ) : new Text(
+              //                 "pene",
+              //                 textAlign: TextAlign.justify,
+              //                 style: new TextStyle(
+              //                   fontSize: 16.0,
+              //                   color: Colors.black,
+              //                 ),
+              //               ),
+              //             ),
+              //         ],
+              //       )
+              //   ),
+              //   flex: 3,
+              // ),
             ],
           );
         },
