@@ -46,6 +46,9 @@ class DbHelper {
   Future<int> saveData(UserModel user) async {
     var dbClient = await db;
     var res = await dbClient.insert(Table_User, user.toMap());
+    var table = await dbClient.rawQuery("SELECT $C_favDrink FROM $Table_User WHERE "
+        "$C_UserID = 'sachong'");
+    print(table.runtimeType);
     return res;
   }
 
@@ -62,6 +65,18 @@ class DbHelper {
     return null;
   }
 
+  Future<List<Map<String, dynamic>>> getFavoriteDrink(String userId) async {
+    var dbClient = await db;
+    var res = await dbClient.rawQuery("SELECT $C_favDrink FROM $Table_User WHERE "
+        "$C_UserID = '$userId'");
+
+    if (res.length > 0) {
+      // print(res);
+      return res;
+    }
+
+    return null;
+  }
   Future<int> updateUser(UserModel user) async {
     var dbClient = await db;
     var res = await dbClient.update(Table_User, user.toMap(),

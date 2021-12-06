@@ -1,3 +1,6 @@
+
+import 'package:mixDrink/models/drink_option.dart';
+import 'package:mixDrink/DatabaseHandler/DbHelper.dart';
 import 'package:mixDrink/DatabaseHandler/DbHelper.dart';
 import 'package:mixDrink/Model/UserModel.dart';
 import 'package:mixDrink/resources/repository.dart';
@@ -6,40 +9,66 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:mixDrink/models/drink_option.dart';
 import 'package:mixDrink/Screens/DrinkDetails.dart';
-import 'package:mixDrink/widgets/list_drinks.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+//import 'package:mixDrink/widgets/list_drinks.dart';
 import 'Cocktails.dart';
 import 'HomeForm.dart';
 import 'HomeDrink.dart';
-import 'package:mixDrink/Screens/RandomDrink.dart' as Random;
 
 ///cocktail list screen
 class Favorites extends StatefulWidget {
   final String search;
   final String title;
-  final String id;
-  final String drinkName;
-  Favorites({Key key, @required this.search, this.title, this.id, this.drinkName}): super(key: key);
+  Favorites({Key key, this.search, this.title}): super(key: key);
   _FavoritesState createState() => _FavoritesState();
 }
 
 class _FavoritesState extends State<Favorites> {
 
-  int _selectedIndex = 2; ///starts on cocktail icon
+
   var input = "";
 
-  TextEditingController fieldText = new TextEditingController();
+  // TextEditingController fieldText = new TextEditingController();
   String getVal;
 
   /// deletes what is written in search box
-  void clearText() {
-    fieldText.clear();
-  }
+  // void clearText() {
+  //   fieldText.clear();
+  // }
 
   Future<List<DrinkOption>> _getDrinkOptions() async {
-    return Repository().getDrinkOptions(widget.search);
+    List<DrinkOption> temp = new List<DrinkOption>();
+    print("test");
+    Set<String> drinkNames = new Set();
+    UserModel user = UserModel(userId, userName, email, password, '');
+    var res = await dbHelper.getFavoriteDrink('sachong');
+    // Repository().getDrinkOptions(widget.search);
+    // print(res);
+
+    for (var i in res) {
+      drinkNames.add(i['drink_name']);
+      // print(i['drink_name']);
+    }
+
+    print(drinkNames);
+    for (var i in drinkNames){
+      if(!i.isEmpty){
+        print("this is i:");
+        print(i);
+        var lst = await Repository().getDrink(i);
+        print("test3");
+        print(lst[0]);
+        temp.add(lst[0]);
+        print("test");
+      }
+    }
+    for (var i in temp){
+      print(i.strDrink);
+    }
+    return temp;
   }
 
+  int _selectedIndex = 2; ///starts on cocktail icon
   ///change icon in bottom tool bar
   void _onItemTapped(int index) {
     setState(() {
@@ -49,12 +78,23 @@ class _FavoritesState extends State<Favorites> {
       Navigator.push(context,
           MaterialPageRoute(builder: (_) => HomeDrink()));
     }
-    else if(index == 1){ ///change screen depending on index
+    else if(index == 1) {
+      ///change screen depending on index
       Navigator.push(
         context,
-        PageTransition(type: PageTransitionType.rightToLeft, child: CocktailDrinks(search: 'c=Cocktail', title: 'Cocktail')),
+        PageTransition(type: PageTransitionType.rightToLeft,
+            child: CocktailDrinks(search: 'c=Cocktail', title: 'Cocktail')),
       );
     }
+    // else if(index == 2) {
+    //   ///change screen depending on index
+    //   Navigator.push(
+    //     context,
+    //     PageTransition(type: PageTransitionType.rightToLeft,
+    //         child: CocktailDrinks(search: 'c=Cocktail', title: 'Cocktail')),
+    //   );
+    // }
+
     else if(index == 3){ ///goes to settings
       Navigator.push(context,
           MaterialPageRoute(builder: (_) => HomeForm()));
@@ -69,33 +109,38 @@ class _FavoritesState extends State<Favorites> {
   String password = '';
   UserModel userModel;
 
+  var userKey;
+  var res;
 
-  bool toggle = false;
 
   @override
 
   void initState() {
     super.initState();
-    getUserData();
-
+    userKey = getUserData();
     dbHelper = DbHelper();
+    getFavDrinks();
+    // print(res);
+    // fieldText.addListener;
   }
 
-  Future<void> getUserData() async {
+  Future<String> getUserData() async {
     final SharedPreferences sp = await _pref;
     userId = sp.getString("user_id");
     userName = sp.getString("user_name");
     email = sp.getString("email");
     password = sp.getString("password");
+    return userId;
   }
 
-  Future<void> getFavDrinks() async{
-    await dbHelper.getLoginUser(userId, password).then((userData) {
-      if (userData != null) {
-        userModel = userData;
-      }
-    });
+  Future<dynamic> getFavDrinks() async{
+    UserModel user = UserModel(userId, userName, email, password, '');
+    var res = await dbHelper.getFavoriteDrink('sachong');
+
+    // print(res);
+    return res;
   }
+
 
   Widget build(BuildContext context) {
     return Scaffold(

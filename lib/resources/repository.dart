@@ -11,7 +11,9 @@ class Repository {
   Future<List<DrinkOption>> getDrinkOptions(String search){
     return drinkApiProvider.getDrinkOptions(search);
   }
-
+  Future<List<DrinkOption>> getDrink(String search){
+    return drinkApiProvider.getDrink(search);
+  }
   Future<Drink> getDrinkDetails(String id) {
     return drinkApiProvider.getDrinkDetails(id);
   }

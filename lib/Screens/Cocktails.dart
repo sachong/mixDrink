@@ -31,6 +31,8 @@ class _CocktailDrinksState extends State<CocktailDrinks> {
   }
 
   Future<List<DrinkOption>> _getDrinkOptions() async {
+    // print(widget.search);
+    // print(Repository().getDrinkOptions(widget.search));
     return Repository().getDrinkOptions(widget.search);
   }
 

@@ -41,6 +41,7 @@ class _LoginFormState extends State<LoginForm> {
     } else {
       await dbHelper.getLoginUser(uid, passwd).then((userData) {
         if (userData != null) {
+          print(userData);
           setSP(userData).whenComplete(() {
             Navigator.pushAndRemoveUntil(
                 context,
