@@ -48,7 +48,7 @@ class DbHelper {
     var res = await dbClient.insert(Table_User, user.toMap());
     var table = await dbClient.rawQuery("SELECT $C_favDrink FROM $Table_User WHERE "
         "$C_UserID = 'sachong'");
-    print(table.runtimeType);
+    // print(table.runtimeType);
     return res;
   }
 

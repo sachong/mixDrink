@@ -3,9 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:mixDrink/models/drink_option.dart';
 import 'package:mixDrink/Screens/RandomDrink.dart';
-import 'package:mixDrink/widgets/list_drinks.dart';
-
-import 'package:mixDrink/Screens/RandomDrink.dart' as Random;
 import 'Favorites.dart';
 import 'HomeForm.dart';
 import 'Cocktails.dart';

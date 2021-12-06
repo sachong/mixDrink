@@ -7,9 +7,6 @@ import 'package:mixDrink/Model/UserModel.dart';
 import 'package:mixDrink/Screens/SignupForm.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'HomeDrink.dart';
-import 'HomeForm.dart';
-
-//import 'package:mixDrink/widgets/home.dart' as Home;
 
 class LoginForm extends StatefulWidget {
   @override

@@ -1,16 +1,13 @@
 
 import 'package:mixDrink/models/drink_option.dart';
 import 'package:mixDrink/DatabaseHandler/DbHelper.dart';
-import 'package:mixDrink/DatabaseHandler/DbHelper.dart';
 import 'package:mixDrink/Model/UserModel.dart';
 import 'package:mixDrink/resources/repository.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:mixDrink/models/drink_option.dart';
 import 'package:mixDrink/Screens/DrinkDetails.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-//import 'package:mixDrink/widgets/list_drinks.dart';
 import 'Cocktails.dart';
 import 'HomeForm.dart';
 import 'HomeDrink.dart';
@@ -38,7 +35,7 @@ class _FavoritesState extends State<Favorites> {
 
   Future<List<DrinkOption>> _getDrinkOptions() async {
     List<DrinkOption> temp = new List<DrinkOption>();
-    print("test");
+    // print("test");
     Set<String> drinkNames = new Set();
     UserModel user = UserModel(userId, userName, email, password, '');
     var res = await dbHelper.getFavoriteDrink('sachong');
@@ -50,20 +47,20 @@ class _FavoritesState extends State<Favorites> {
       // print(i['drink_name']);
     }
 
-    print(drinkNames);
+    // print(drinkNames);
     for (var i in drinkNames){
       if(!i.isEmpty){
-        print("this is i:");
-        print(i);
+        // print("this is i:");
+        // print(i);
         var lst = await Repository().getDrink(i);
-        print("test3");
-        print(lst[0]);
+        // print("test3");
+        // print(lst[0]);
         temp.add(lst[0]);
-        print("test");
+        // print("test");
       }
     }
     for (var i in temp){
-      print(i.strDrink);
+      // print(i.strDrink);
     }
     return temp;
   }
@@ -86,15 +83,6 @@ class _FavoritesState extends State<Favorites> {
             child: CocktailDrinks(search: 'c=Cocktail', title: 'Cocktail')),
       );
     }
-    // else if(index == 2) {
-    //   ///change screen depending on index
-    //   Navigator.push(
-    //     context,
-    //     PageTransition(type: PageTransitionType.rightToLeft,
-    //         child: CocktailDrinks(search: 'c=Cocktail', title: 'Cocktail')),
-    //   );
-    // }
-
     else if(index == 3){ ///goes to settings
       Navigator.push(context,
           MaterialPageRoute(builder: (_) => HomeForm()));
@@ -120,8 +108,6 @@ class _FavoritesState extends State<Favorites> {
     userKey = getUserData();
     dbHelper = DbHelper();
     getFavDrinks();
-    // print(res);
-    // fieldText.addListener;
   }
 
   Future<String> getUserData() async {

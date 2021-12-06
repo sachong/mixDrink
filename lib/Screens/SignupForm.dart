@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mixDrink/Comm/comHelper.dart';
-import 'package:mixDrink/Comm/genLoginSignupHeader.dart';
+// import 'package:mixDrink/Comm/genLoginSignupHeader.dart';
 import 'package:mixDrink/Comm/genTextFormField.dart';
 import 'package:mixDrink/DatabaseHandler/DbHelper.dart';
 import 'package:mixDrink/Model/UserModel.dart';
@@ -69,7 +69,10 @@ class _SignupFormState extends State<SignupForm> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  genLoginSignupHeader('Register'),
+                  SizedBox(height: 30.0),
+                  Text('Register',
+                      style: TextStyle(fontSize: 35)),
+                  SizedBox(height: 70.0),
                   getTextFormField(
                       controller: _conUserId,
                       icon: Icons.person,
